@@ -1,13 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+const morgan  = require("morgan")
 const app = express();
 
 var corsOptions = {
   origin: "http://localhost:8081"
 };
 
+app.use(morgan("combined"))
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
